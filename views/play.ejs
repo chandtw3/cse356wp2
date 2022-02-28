@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/play.css"> 
+</head>
+<script>
+    const select = async (i) => {
+        let grid = ["X", "O", "X"];
+        let req = await fetch('/ttt/play', { 
+                method: "POST",
+                header: {
+                    'Accept': '*/*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ grid: grid })
+            });   
+
+        // let res = await fetch('/ttt/play');
+        // let { grid } = await res.json();
+        // if (grid[i] === " ") {
+        //     grid[i] = 'O';
+        //     console.log(grid)
+        //     let req = await fetch('/ttt/play', { 
+        //         method: "POST",
+        //         header: {
+        //             'Accept': '*/*',
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({ grid: grid })
+        //     });
+        // }
+    }
+</script>
+<body>
+    <div id="container">
+        <div id="grid">
+            <% for (i=0;i<grid.length;i++){%>
+                <div class="box" onclick="select('<%=i%>')"><%=grid[i]%></div>
+            <% } %>
+            <!-- <div class="box" id="box1" onclick="select(0)"> </div>
+            <div class="box" id="box2" onclick="select(1)"> </div>
+            <div class="box" id="box3" onclick="select(2)"> </div>
+            <div class="box" id="box4" onclick="select(3)"> </div>
+            <div class="box" id="box5" onclick="select(4)"> </div>
+            <div class="box" id="box6" onclick="select(5)"> </div>
+            <div class="box" id="box7" onclick="select(6)"> </div>
+            <div class="box" id="box8" onclick="select(7)"> </div>
+            <div class="box" id="box9" onclick="select(8)"> </div> -->
+        </div>
+    </div>
+</body>

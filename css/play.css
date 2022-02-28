@@ -1,0 +1,27 @@
+#container {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box {
+    font-size: 30px;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
